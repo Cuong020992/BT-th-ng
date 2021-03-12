@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="font-size: 30px; font-weight: bolder"> NHẬP VÀO THÁNG</h2>
+
+<input type="text" size="20" id="inputMonth" placeholder="nhập tháng vào">
+<input type="button" value="Tính số ngày" onclick="tinhNgay()">
+<p id="showDay"></p>
+</body>
+</html>
+
+<script>
+
+    function tinhNgay() {
+
+        let inputMonth = +document.getElementById("inputMonth").value;
+        let showDay = document.getElementById("showDay");
+
+        switch (inputMonth) {
+            default:
+                showDay.innerHTML = "Tháng "+inputMonth +" có 31 ngày";
+                break;
+            case 2:
+                showDay.innerHTML = "Tháng "+inputMonth +" có 28 hoặc 29 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                showDay.innerHTML = "Tháng "+inputMonth +" có 30 ngày";
+                break;
+        }
+
+
+    }
+
+    // function getDateFromMonth(inputMonth) {
+    //     let date = 31;
+    //     switch (inputMonth) {
+    //         default:
+    //             date = 31;
+    //             break;
+    //         case 2:
+    //             date = 28;
+    //             break;
+    //         case 4:
+    //         case 6:
+    //         case 9:
+    //         case 11:
+    //             date = 30;
+    //             break;
+    //     }
+    //     return date;
+    // }
+</script>
